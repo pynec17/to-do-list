@@ -85,6 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -120,7 +121,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -129,8 +130,73 @@ table {
   border-spacing: 0;
 }
 
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    165deg,
+    rgba(0, 183, 255, 0.301),
+    rgb(4, 23, 27)
+  );
+}
+
+.title {
+  width: 400px;
+  height: 40px;
+  border: dotted 5px lightblue;
+  padding: 1em;
+  margin: 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+#list {
+  padding: 1em;
+  height: 600px;
+  width: 400px;
+  border: dotted 5px pink;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
 .list-item {
   border: 1px black solid;
+  min-height: 50px;
+  min-width: 80%;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  column-gap: 1em;
+  margin: 2px 0;
+}
+
+.task {
+  margin: auto;
+  font-size: 1em;
+}
+
+#add-button {
+  /* border: 1px red solid; */
+  width: 150px;
+  height: 60px;
+  background-color: rgb(110, 160, 160);
+}
+
+input {
+  width: 400px;
   height: 50px;
-  width: 80%;
+  font-size: 1.5em;
+  border: 2px solid grey;
+  background-color: grey;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: grey;
+  font-size: 0.9em;
 }
